@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;600&display=swap');
+
+$color-primary:#22254b;
+$color-secondary:#373b69;
+
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+html {
+  font-size: 0.625rem;
+}
+
+body {
+  background-color: $color-primary;
+  font-family: 'Montserrat', sans-serif;
+  height: 100vh;
+}
+
+
+header {
+  background-color: $color-secondary;
+  display: flex;
+  justify-content: end;
+  padding: 2.5rem;
+
+  .search {
+    background-color: transparent;
+    border: none;
+    border: 2px solid $color-primary;
+    border-radius: 1rem;
+    padding: 1rem 2rem;
+    font-family: inherit;
+    font-size: 1.6rem;
+    color: white;
+
+    &::placeholder {
+      color: #7378c5;
+    }
+
+    &:focus {
+      outline: none;
+      background-color: $color-primary;
+    }
+  }
+}
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 1.5rem 3rem;
+  justify-content: center;
+
+  .movie {
+    width: 300px;
+    background-color: $color-secondary;
+    margin-right: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-radius: 3px;
+    overflow: hidden;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, .1);
+    position: relative;
+    cursor: pointer;
+
+    &__info {
+      color: #eee;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 2rem 1rem;
+      letter-spacing: .5px;
+
+      h3 {
+        font-size: 1.8rem;
+      }
+
+      span {
+        background-color: $color-primary;
+        padding: .5rem 1rem;
+        font-size: 1.2rem;
+        border-radius: 3px;
+        font-weight: bold;
+
+        &.green {
+          color: lightgreen;
+        }
+
+        &.red {
+          color: red;
+        }
+
+        &.orange {
+          color: orange;
+        }
+
+        &.white {
+          color: white;
+        }
+      }
+
+    }
+
+    &:hover .movie__overview {
+      transform: translateY(0);
+    }
+
+    &__overview {
+      width: 100%;
+      padding: 2.5rem;
+      font-size: 1.4rem;
+      font-weight: 400;
+      background-color: white;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      transform: translateY(101%);
+      transition: .3s ease;
+
+      h3 {
+        font-size: 1.8rem;
+      }
+    }
+
+  }
+
+  img {
+    width: 100%;
+  }
+}
